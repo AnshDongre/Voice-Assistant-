@@ -1,7 +1,14 @@
 import pyttsx3
 import pywhatkit
 import datetime
-
+import speech_recognition as sr
+listener = sr.Recognizer()
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
+engine.say(r'Hi i am anshs assistant ')
+engine.say('what can i do for you?')
+engine.runAndWait()
 
 
 def talk(text):
